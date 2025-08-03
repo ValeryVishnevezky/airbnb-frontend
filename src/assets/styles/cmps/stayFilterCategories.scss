@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+.categories-outer-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-top: 1px solid #dddddda8;
+  width: 100%;
+  background-color: $clr6;
+  z-index: 11;
+  overflow: hidden;
+  padding: 0 80px;
+  position: relative;
+
+  button {
+    @include carousel-btn;
+    top: 60%;
+    scale: 1.15;
+    opacity: 1;
+    border: 1px solid $gray2;
+    background-color: $clr6;
+    box-shadow: rgb(255, 255, 255) 0 0 10px 30px;
+
+    &.prev {
+      left: 40px;
+
+    }
+
+    &.next {
+      right: 40px;
+    }
+
+    &:hover {
+      box-shadow: rgb(255, 255, 255) 0 0 10px 30px;
+      scale: 1.25;
+    }
+  }
+
+  .categories-inner-container {
+    padding-left: 4px;
+    width: 100%;
+    font-family: AirbnbCereal_W_Bk;
+    font-weight: bold;
+    display: grid;
+    gap: 40px;
+    align-content: center;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding-top: 23px;
+
+    .category {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 56px;
+      grid-row: 1;
+      color: #222222;
+      opacity: 0.7;
+      text-align: center;
+      justify-items: center;
+      transition: 200ms;
+      scroll-snap-align: start;
+      padding: 4px 0px;
+      padding-bottom: 11px;
+      margin-top: 0px;
+      margin-bottom: 0;
+      border-bottom: 2px solid transparent;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      span {
+        font-size: rem(12px);
+        text-wrap: nowrap;
+      }
+
+      span:first-child {
+        color: pink;
+      }
+
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .category.selected {
+      border-bottom: 2px solid rgb(0, 0, 0);
+      opacity: 1;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .categories-inner-container::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.cat-sticky {
+  position: sticky;
+  top: 80px;
+  box-shadow: 0 2px 4px rgba(200, 200, 200, 0.4);
+
+  button {
+    top: 52%;
+  }
+}
+
+@include for-extra-wide-layout {
+  .categories-outer-container {
+    padding: 0 80px;
+
+    button {
+      &.prev {
+        left: 80px;
+
+      }
+
+      &.next {
+        right: 80px;
+      }
+    }
+  }
+}
+
+@include for-wide-layout {
+  .categories-outer-container {
+    padding: 0 40px;
+
+    button {
+      &.prev {
+        left: 40px;
+
+      }
+
+      &.next {
+        right: 40px;
+      }
+    }
+  }
+}
+
+@include for-normal-layout {
+  .categories-outer-container {
+    padding: 0 40px;
+  }
+
+  .cat-sticky {
+    position: sticky;
+    box-shadow: 0 2px 4px rgba(200, 200, 200, 0.4);
+  }
+
+  button {
+    &.prev {
+      left: 40px;
+
+    }
+
+    &.next {
+      right: 40px;
+    }
+  }
+}
+
+@include for-narrow-layout{
+  .categories-outer-container{
+    margin-top: 178px;
+  }
+}
+
+@include for-mobile-layout {
+  .categories-outer-container {
+    border-top: none;
+    margin-top: 82px;
+    padding-top: 0;
+    box-shadow: 0 2px 4px rgba(200, 200, 200, 0.4);
+
+    .categories-inner-container {
+      padding-left: 4px;
+      width: 100%;
+      font-family: AirbnbCereal_W_Bk;
+      font-weight: bold;
+      display: grid;
+      gap: 40px;
+      align-content: center;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+
+      .category {
+        min-width: 56px;
+        grid-row: 1;
+        color: #222222;
+        opacity: 0.7;
+        text-align: center;
+        justify-items: center;
+        transition: 200ms;
+        scroll-snap-align: start;
+        padding: 4px 0px;
+        padding-bottom: 8px;
+        margin-top: 0px;
+        margin-bottom: 0;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 1;
+          border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .category.selected {
+        border-bottom: 2px solid rgb(0, 0, 0);
+        opacity: 1;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

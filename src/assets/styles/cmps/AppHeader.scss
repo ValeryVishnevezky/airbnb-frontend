@@ -1,0 +1,247 @@
+.app-header {
+  position: relative;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  width: 100%;
+  background-color: white;
+  transition: all 0.3s ease;
+
+
+  .app-header-top-reservation {
+    height: fit-content;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 65px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .app-header-left-box {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      .app-header-left-box-logo-img {
+        position: absolute;
+        top: 20px;
+        left: 24px;
+        width: 103px;
+        min-width: 103px;
+      }
+    }
+  }
+
+  .app-header-top {
+    padding-left: 80px;
+    padding-right: 80px;
+    height: fit-content;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .app-header-left-box {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      .app-header-left-box-logo-img {
+        width: 103px;
+        min-width: 103px;
+      }
+    }
+
+    .app-header-world-svg {
+      width: 46px;
+      height: 42px;
+      padding: 13px;
+      cursor: pointer;
+
+      &:hover {
+        border-radius: 22px;
+        background-color: #f7f7f7;
+      }
+    }
+
+    .app-header-right-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .app-header-right-box-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5px;
+        min-width: 85px;
+        background-color: transparent;
+        border: 1px solid #dddddd;
+        border-radius: 30px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 8px;
+        padding-left: 14px;
+        cursor: pointer;
+
+        &:hover {
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+        }
+
+      }
+
+      .active-menu{
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+      }
+
+      p {
+        font-family: AirbnbCereal_W_Md2, sans-serif;
+        font-weight: normal;
+        color: $clr7;
+        letter-spacing: 0.001px;
+        font-size: rem(13.5px);
+        padding: 13px 10px;
+        margin-left: 30px;
+        letter-spacing: 0.03rem;
+        white-space: nowrap;
+        cursor: pointer;
+
+        &:hover {
+          border-radius: 22px;
+          background-color: #f7f7f7;
+        }
+      }
+
+      .app-header-menu-svg {
+        width: 16px;
+        cursor: pointer;
+      }
+
+      .app-header-user-img {
+        width: 32px;
+        height: 32px;
+        margin-left: 14px;
+        border-radius: 50%;
+        object-fit: cover;
+        cursor: pointer;
+      }
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 73px;
+      right: 80px;
+      width: 240px;
+      min-width: 240px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      text-align: left;
+      box-shadow: 0 3px 12px 0 rgb(0 0 0 / 0.15);
+      background-color: white;
+      border-radius: 0.8rem;
+      padding: 8px 0;
+      z-index: 16;
+
+      .dropdown-menu-link,
+      .dropdown-menu-link-btn {
+        padding: 12px 16px;
+        font-size: rem(13.5px);
+        width: 100%;
+        letter-spacing: 0.02rem;
+        color: #222222;
+      }
+
+      .dropdown-menu-link:hover,
+      .dropdown-menu-link-btn:hover {
+        background-color: #a9a9a91a;
+      }
+
+      .dropdown-menu-link-btn {
+        border: none;
+        background-color: transparent;
+        text-align: left;
+      }
+
+      .login,
+      .messages,
+      .trips,
+      .wishlist,
+      .edit {
+        font-family: AirbnbCereal_W_Bk, sans-serif;
+        font-weight: normal;
+        color: #000000;
+      }
+    }
+  }
+
+  .app-header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 16px;
+    padding-bottom: 22px;
+    width: 100%;
+    z-index: 15;
+    background-color: white;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  height: 80px;
+  background-color: white;
+  width: 100%;
+  .app-header-bottom {
+    background-color: transparent;
+  }
+}
+
+.small {
+  height: 80px;
+  z-index: 15;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0 0 0 / 25%);
+  position: fixed;
+  top: 168px;
+  left: 0;
+  z-index: 15;
+}
+
+@media screen and (max-width: 1440px) {
+  .app-header {
+    .app-header-top {
+      padding-left: 40px;
+      padding-right: 40px;
+      .dropdown-menu {
+        right: 40px;
+      }
+    }
+  }
+
+  .small {
+    height: 80px;
+    z-index: 15;
+    width: 100%;
+    max-width: 1200px;
+  }
+}

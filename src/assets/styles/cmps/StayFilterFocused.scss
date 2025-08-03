@@ -1,0 +1,402 @@
+.stay-filter-focused-main-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  padding-bottom: 22px;
+  width: 100%;
+  z-index: 15;
+  background-color: white;
+  transition: transform 0.3s, opacity 0.2s;
+  transform-origin: center;
+
+  .stay-filter-focused-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 855px;
+    background-color: white;
+    z-index: 15;
+
+    .stays {
+      position: fixed;
+      top: 30px;
+      left: 50%;
+      font-family: AirbnbCereal_W_Md2, sans-serif;
+      font-weight: normal;
+      color: #222222;
+      text-decoration: none;
+      font-size: rem(16px);
+      letter-spacing: 0.01rem;
+    }
+
+    .gray {
+      background-color: #ebebeb;
+
+      > * {
+        &:hover {
+          background-color: #dddddd;
+          border-radius: rem(32px);
+        }
+      }
+    }
+
+    .white {
+      background-color: white;
+
+      > * {
+        &:hover {
+          background-color: #ebebeb;
+          border-radius: rem(32px);
+        }
+      }
+    }
+
+    .stay-filter-focused {
+      position: relative;
+      display: grid;
+      grid-template-columns: 2.3fr 1.1fr 1.1fr 2.3fr;
+      grid-auto-flow: column;
+      align-items: center;
+      width: 100%;
+      max-width: 855px;
+      height: 66px;
+      color: #222222;
+      border-radius: rem(32px);
+      border: 1px solid #dddddd;
+      box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1),
+        0 1px 2px 0 rgba(0, 0, 0, 0.08);
+
+      h3 {
+        font-size: 0.75rem;
+        font-family: AirbnbCereal_W_Bk, sans-serif;
+        font-weight: normal;
+        color: #000000;
+        letter-spacing: 0.01rem;
+        margin: 0;
+        padding-bottom: 2px;
+      }
+
+      > * {
+        position: relative;
+        min-width: 100px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 25%;
+          bottom: 25%;
+          right: 0px;
+          width: 1px;
+          background-color: #dddddd;
+        }
+
+        &:hover::after {
+          opacity: 0;
+        }
+      }
+
+      > *:nth-last-child(1)::after {
+        opacity: 0;
+      }
+
+      .focus-place {
+        padding: 14px 30px;
+        margin-bottom: 1px;
+        padding-left: 32px;
+        background-color: white;
+        box-shadow: 0 3px 12px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.08);
+        border-radius: rem(32px);
+
+        &::after {
+          opacity: 0;
+        }
+      }
+
+      .not-focus-place {
+        padding: 15px 30px;
+        padding-left: 32px;
+      }
+
+      .stay-filter-focused-place {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        overflow: hidden;
+        cursor: pointer;
+        width: 100%;
+        white-space: nowrap;
+        z-index: 100;
+
+        input {
+          border: none;
+          background-color: transparent;
+          font-family: AirbnbCereal_W_Lt, sans-serif;
+          font-size: 0.87rem;
+          width: 100%;
+          padding: 0;
+          color: #585858;
+          letter-spacing: 0.01rem;
+          background-color: transparent;
+
+          &:focus {
+            outline: none;
+            background-color: transparent;
+          }
+
+          &:-webkit-autofill {
+            color: #585858 !important;
+            font-family: AirbnbCereal_W_Lt, sans-serif;
+            font-size: 0.87rem !important;
+            box-shadow: 0 0 0px 1000px white inset !important;
+            transition: background-color 5000s ease-in-out 0s !important;
+          }
+
+          &:-internal-autofill-selected {
+            color: #585858 !important;
+            font-family: AirbnbCereal_W_Lt, sans-serif;
+            font-size: 0.87rem !important;
+            box-shadow: 0 0 0px 1000px transparent inset !important;
+          }
+        }
+      }
+
+      .focus-date {
+        padding-top: 15px;
+        padding-bottom: 14px;
+        padding-right: 35px;
+        padding-left: 19px;
+        background-color: white;
+        box-shadow: 0 3px 12px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.08);
+        border-radius: rem(32px);
+        &::after {
+          opacity: 0;
+        }
+      }
+
+      .not-focus-date {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 35px;
+        padding-left: 19px;
+      }
+
+      .stay-filter-focused-date {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        width: 100%;
+
+        .stay-filter-focused-date-in-box,
+        .stay-filter-focused-date-out-box {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          position: relative;
+
+          .stay-filter-focused-date-in,
+          .stay-filter-focused-date-out {
+            white-space: nowrap;
+
+            .date-input {
+              font-size: 0.88rem;
+              color: #585858;
+              width: 70px;
+              letter-spacing: 0.01rem;
+            }
+          }
+
+          button {
+            background-color: transparent;
+            border: none;
+            img {
+              position: absolute;
+              top: 10%;
+              right: -18px;
+              width: 25px;
+              padding: 7px;
+              border-radius: 50%;
+              cursor: pointer;
+
+              &:hover {
+                background-color: #dddddd;
+              }
+            }
+          }
+        }
+      }
+
+      .focus-guest {
+        padding: 13px 24px;
+        background-color: white;
+        box-shadow: 0 3px 12px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.08);
+        border-radius: rem(32px);
+        &::after {
+          opacity: 0;
+        }
+      }
+
+      .not-focus-guest {
+        padding: 15px 24px;
+      }
+
+      .stay-filter-focused-guest {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 24px;
+        overflow: hidden;
+        cursor: pointer;
+        width: 100%;
+        white-space: nowrap;
+
+        .guest-input-box {
+          .guest-input {
+            font-size: 0.875rem;
+            color: #6a6a6a;
+            width: 80px;
+            letter-spacing: 0.01rem;
+          }
+        }
+
+        .search {
+          width: 112px;
+          height: 48px;
+          border-radius: rem(32px);
+          font-family: AirbnbCereal_W_Bk, sans-serif;
+          font-weight: normal;
+          letter-spacing: 0.02rem;
+
+          i {
+            margin-right: 10px;
+          }
+        }
+
+        .stay-filter-focused-not-search {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          position: absolute;
+          right: 1px;
+          border: none;
+          background-color: #ff385c;
+          min-width: 48px;
+          font-size: 16px;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          justify-self: end;
+          margin-right: 8px;
+          cursor: pointer;
+
+          &::after {
+            display: none;
+          }
+
+          &:hover {
+            background-color: #e31c5f;
+          }
+        }
+
+        .stay-filter-focused-search {
+          position: absolute;
+          right: 1px;
+          font-size: 16px;
+          color: white;
+          justify-self: end;
+          margin-right: 8px;
+          cursor: pointer;
+          width: 112px;
+          height: 48px;
+          border-radius: rem(32px);
+          font-family: AirbnbCereal_W_Bk, sans-serif;
+          font-weight: normal;
+          letter-spacing: 0.02rem;
+          border: none;
+          background: linear-gradient(90deg, #ff385c, #d70653);
+          
+          &:hover {
+            @include button-hover;
+          }
+
+          i {
+            margin-right: 5px;
+          }
+
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.transform {
+  transform: scale(0.3, 0.6) translateY(-115px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 950px) {
+  .stay-filter-focused-main-box {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding-top: 70px;
+    padding-bottom: 30px;
+    padding-left: 38px;
+    padding-right: 38px;
+
+    .stay-filter-focused-main {
+      .stay-filter-focused {
+        h3 {
+          font-size: 0.75rem;
+          font-family: AirbnbCereal_W_Bk, sans-serif;
+          font-weight: normal;
+          margin: 0;
+          padding-bottom: 3px;
+          letter-spacing: 0.01rem;
+        }
+
+        .stay-filter-focused-date {
+          .stay-filter-focused-date-in-box,
+          .stay-filter-focused-date-out-box {
+            button {
+              img {
+                position: absolute;
+                top: 10%;
+                right: -30px;
+                width: 25px;
+                padding: 7px;
+                border-radius: 50%;
+                cursor: pointer;
+
+                &:hover {
+                  background-color: #dddddd;
+                }
+              }
+            }
+          }
+        }
+      }
+      .stays {
+        position: fixed;
+        top: 93px;
+        left: 50%;
+        font-family: AirbnbCereal_W_Md2, sans-serif;
+        font-weight: normal;
+        text-decoration: none;
+        font-size: rem(16px);
+        color: #222222;
+        letter-spacing: 0.01rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+.stay-filter-mobile-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 17;
+  background-color: #f7f7f7;
+  max-height: 100vh;
+  overflow: hidden;
+
+  .stay-filter-mobile-close {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 19px;
+
+    button {
+      border: 1px solid #b0b0b0;
+      border-radius: 50%;
+      background-color: white;
+      cursor: pointer;
+      transition: transform 0.25s;
+
+      img {
+        width: 20px;
+        height: 30px;
+        padding: 4px;
+      }
+
+      &:hover {
+        transform: scale(1.04);
+        border-color: #00000014;
+        box-shadow: 0 0 0 1px transparent, 0 0 0 4px transparent,
+          0 6px 16px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+
+  .stay-filter-mobile {
+    display: flex;
+    flex-direction: column;
+
+    .stay-filter-focused-place,
+    .stay-filter-focused-date,
+    .stay-filter-focused-guest {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 19px 20px;
+      margin: 13px 12px;
+      border-radius: 22px;
+      margin-top: 0;
+      background-color: white;
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.973),
+        0px 2px 6px 0px rgba(0, 0, 0, 0.035),
+        0px 4px 8px 0px rgba(0, 0, 0, 0.035);
+      cursor: pointer;
+
+      h3 {
+        font-family: AirbnbCereal_W_Lt, sans-serif;
+        letter-spacing: 0.03rem;
+        font-weight: bold;
+        font-size: 0.85rem;
+        margin: 0;
+        color: #6a6a6a;
+      }
+
+      h4 {
+        font-family: AirbnbCereal_W_Bk, sans-serif;
+        letter-spacing: 0.01rem;
+        font-weight: normal;
+        font-size: 0.875rem;
+        margin: 0;
+      }
+    }
+
+    .active {
+      // border: 1px solid #e6e6e6;
+      box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.973),
+        0px 2px 15px 0px rgba(0, 0, 0, 0.079),
+        0px 4px 10px 0px rgba(0, 0, 0, 0.109);
+    }
+  }
+  .stay-filter-mobile-bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70px;
+    padding: 12px 24px;
+    border-top: 1px solid #0000000d;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      letter-spacing: 0.02rem;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+
+      i {
+        margin-right: 5px;
+      }
+    }
+
+    .stay-filter-mobile-clear {
+      font-family: AirbnbCereal_W_Md;
+      background-color: transparent;
+      text-decoration: underline;
+      color: #222222;
+      padding: 0;
+    }
+
+    .stay-filter-mobile-search {
+      font-family: AirbnbCereal_W_Md;
+      color: white;
+      padding: 13px 23px;
+      border-radius: 8px;
+      border: none;
+      background: linear-gradient(90deg, #ff385c, #d70653);
+
+      &:hover {
+        @include button-hover;
+      }
+    }
+  }
+}

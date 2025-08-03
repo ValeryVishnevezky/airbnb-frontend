@@ -1,0 +1,397 @@
+/* Breakpoint mixins */
+@mixin for-small-mobile-layout {
+  @media (max-width: $small-mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin for-mobile-layout {
+  @media (max-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin for-narrow-layout {
+  @media (max-width: $narrow-breakpoint) {
+    @content;
+  }
+}
+
+@mixin for-normal-layout {
+  @media (max-width: $normal-breakpoint) {
+    @content;
+  }
+}
+
+@mixin for-wide-layout {
+  @media (max-width: $wide-breakpoint) {
+    @content;
+  }
+}
+
+// 1440 & more
+@mixin for-extra-wide-layout {
+  @media (min-width: $wide-breakpoint) {
+    @content;
+  }
+}
+
+/* Media  Mixins */
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: calc(($height / $width) * 100%);
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  > img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Mixin for removing hover effects on iphone screen
+@mixin hover-supported {
+  @media not all and (pointer: coarse) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+//   round arrow nav-btn for carousel
+@mixin carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  color: rgba(0, 0, 0, 0.8);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1;
+  padding: 7px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  transition: 200ms;
+
+  &:hover {
+    opacity: 1;
+    scale: 1.03;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px;
+  }
+
+  img {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+  }
+}
+
+@mixin reserve-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(90deg, #ff385c, #d70653);
+  color: $clr6;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    @include button-hover
+  }
+}
+
+@mixin guest-modal {
+  .guest-modal {
+    position: absolute;
+    top: 97%;
+    right: 0;
+    z-index: 12;
+    padding: 16px 36px;
+    margin-top: 12px;
+    width: 416px;
+    border-radius: 32px;
+    background-color: white;
+    box-shadow: 0 3px 12px 0 rgb(0 0 0 / 0.15);
+
+    &::after {
+      display: none;
+    }
+
+    .guest-modal-options {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 24px 0px;
+      border-bottom: 1px solid #ddddddaa;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .guest-modal-options-left {
+        justify-self: start;
+
+        .pets {
+          text-decoration: underline;
+        }
+
+        h4 {
+          font-size: 16px;
+          font-family: AirbnbCereal_W_Md2, sans-serif;
+          font-weight: normal;
+          color: #222222;
+          margin: 0;
+          margin-bottom: 4px;
+        }
+
+        p {
+          font-size: 0.875rem;
+          color: #6a6a6a;
+        }
+      }
+
+      .guest-modal-options-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-self: end;
+        font-size: 16px;
+        margin-right: 3px;
+
+        .disabled {
+          opacity: 0.25;
+          cursor: not-allowed;
+        }
+
+        button {
+          width: 32.5px;
+          height: 32.5px;
+          padding: 9px;
+          margin: 0 15px;
+          border: 1px solid #b0b0b0;
+          border-radius: 50%;
+          background-color: transparent;
+          cursor: pointer;
+          display: flex;
+
+          .svg-icon {
+            display: block;
+            height: 14px;
+            width: 14px;
+            fill: #6a6a6a;
+            align-self: center;
+            justify-self: center;
+          }
+
+          &:hover {
+            border: 1px solid #222222;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin calendar {
+  .react-datepicker {
+    font-family: AirbnbCereal_W_Lt, sans-serif;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+    // padding: 15px;
+  }
+
+  .react-datepicker__header {
+    padding: 15px 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  .react-datepicker__navigation--next {
+    top: 10px;
+    right: 20px;
+  }
+
+  .react-datepicker__navigation--previous {
+    top: 10px;
+    left: 20px;
+  }
+
+  .react-datepicker__month {
+    font-family: AirbnbCereal_W_Lt, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .react-datepicker__day-name {
+    font-family: AirbnbCereal_W_Lt, sans-serif;
+    margin: 0;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #818181;
+  }
+
+  .react-datepicker__day-names {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+
+  .react-datepicker__week {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 10px;
+    font-weight: bold;
+    // color: #48484847;
+  }
+
+  .react-datepicker__day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222222;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: background-color 0.3s, border 0.3s;
+  }
+
+  .react-datepicker__day:hover {
+    color: #222222;
+    border: 1px solid #222222;
+    border-radius: 50%;
+    background-color: white;
+  }
+
+  .react-datepicker__day--selected {
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    background-color: #222222;
+  }
+
+  .react-datepicker__day--selected,
+  .react-datepicker__day--range-start,
+  .react-datepicker__day--range-end {
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    background-color: #222222;
+  }
+
+  .react-datepicker__day--in-range:not(.react-datepicker__day--range-start):not(
+      .react-datepicker__day--range-end
+    ) {
+    color: #222222;
+    border: none;
+    border-radius: 50%;
+    background-color: #efefefc4;
+  }
+
+  .react-datepicker__day:not([aria-disabled="true"]):hover,
+  .react-datepicker__month-text:not([aria-disabled="true"]):hover,
+  .react-datepicker__quarter-text:not([aria-disabled="true"]):hover,
+  .react-datepicker__year-text:not([aria-disabled="true"]):hover {
+    color: #222222;
+    border: 1px solid #222222;
+    border-radius: 50%;
+    background-color: white;
+  }
+
+  .react-datepicker__day--in-selecting-range:not(
+      .react-datepicker__day--selected
+    ):not(.react-datepicker__day--in-range) {
+    background-color: #efefefc4;
+    color: #222222;
+  }
+
+  .react-datepicker__day--in-selecting-range:not(
+      .react-datepicker__day--in-range,
+      .react-datepicker__month-text--in-range,
+      .react-datepicker__quarter-text--in-range,
+      .react-datepicker__year-text--in-range
+    ),
+  .react-datepicker__month-text--in-selecting-range:not(
+      .react-datepicker__day--in-range,
+      .react-datepicker__month-text--in-range,
+      .react-datepicker__quarter-text--in-range,
+      .react-datepicker__year-text--in-range
+    ),
+  .react-datepicker__quarter-text--in-selecting-range:not(
+      .react-datepicker__day--in-range,
+      .react-datepicker__month-text--in-range,
+      .react-datepicker__quarter-text--in-range,
+      .react-datepicker__year-text--in-range
+    ),
+  .react-datepicker__year-text--in-selecting-range:not(
+      .react-datepicker__day--in-range,
+      .react-datepicker__month-text--in-range,
+      .react-datepicker__quarter-text--in-range,
+      .react-datepicker__year-text--in-range
+    ) {
+    background-color: #222222;
+  }
+
+  .react-datepicker__day--keyboard-selected,
+  .react-datepicker__month-text--keyboard-selected,
+  .react-datepicker__quarter-text--keyboard-selected,
+  .react-datepicker__year-text--keyboard-selected {
+    color: #222222;
+    border: 1px solid #222222;
+    border-radius: 50%;
+    background-color: white;
+  }
+
+  .react-datepicker__day--outside-month {
+    color: #d5d5d5;
+  }
+}
+
+
+@mixin button-hover{
+  background-image: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    #ff385c 5%,
+    #e61e4d 27.5%,
+    #e31c5f 30%,
+    #d70466 57.5%,
+    #bd1e59 85%,
+    #bd1e59 100%
+  );
+  display: inline-block;
+  background-size: 200% 200%;
+  color: white;
+  border: none;
+
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  background-position: var(--mouse-x) var(--mouse-y);
+}

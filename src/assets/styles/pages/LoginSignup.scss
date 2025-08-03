@@ -1,0 +1,115 @@
+.login-page {
+	display: flex;
+	width: 90vw;
+	height: 80vh;
+	margin-top: 1px solid $gray2;
+	justify-content: center;
+
+	.login-form-container {
+		margin-top: 40px;
+		width: 566px;
+		height: fit-content;
+		border-radius: rem(10px);
+		border: 1px solid $gray2;
+
+		.title {
+			font-family: AirbnbCereal_W_Bk;
+			font-size: 1rem;
+			text-align: center;
+			padding: 20px 0;
+			border-bottom: 1px solid $gray1;
+			letter-spacing: 0.5px;
+			margin: 0;
+		}
+
+		.login-form,
+		.signup-form {
+			display: grid;
+			margin: auto;
+			margin-bottom: 15px;
+			border-radius: rem(10px);
+			padding: 1em;
+			background-color: $clr6;
+
+			section {
+
+				label {
+					font-size: rem(14px);
+					color: $gray3;
+					letter-spacing: 0.5px;
+				}
+
+				.required-ast {
+					color: red;
+				}
+
+			}
+
+			input {
+				height: 35px;
+				width: 100%;
+				border: none;
+				border: 1px solid $gray1;
+				border-radius: 5px;
+				background-color: $clr6;
+				margin: 0;
+
+				&:focus {
+					outline: 0.5px solid $clr8
+				}
+
+			}
+
+			.cta {
+				@include reserve-btn;
+				margin-top: 20px;
+			}
+
+			button:not(.cta) {
+				background-color: transparent;
+				border: 1px solid $gray1;
+				border-radius: 5px;
+				padding: 7px;
+				font-family: AirbnbCereal_W_Bk;
+				font-size: rem(14px);
+				transition: 150ms;
+
+				&:hover {
+					cursor: pointer;
+					color: $clr8;
+					border: 1px solid $clr8;
+					background-color: rgba($clr8, 0.1);
+
+				}
+			}
+
+		}
+
+		.signup-form {
+
+			.admin-toggle {
+				display: flex;
+				align-items: center;
+				justify-self: start;
+
+				span {
+					font-size: .8em;
+				}
+			}
+
+			.cta{
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+@include for-mobile-layout {
+	.login-page {
+
+		.login-form-container {
+			margin-top: 120px;
+		}
+
+	}
+}

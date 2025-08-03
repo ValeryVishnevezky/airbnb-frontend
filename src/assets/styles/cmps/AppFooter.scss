@@ -1,0 +1,134 @@
+.app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  padding-left: 80px;
+  padding-right: 80px;
+  width: 100%;
+  background-color: #f7f7f7;
+  font-size: 14px;
+  color: $clr7;
+  font-family: AirbnbCereal_W_Bk, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0.01rem;  
+
+  .footer-content-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .app-footer-world-svg {
+      width: 26px;
+      height: 26px;
+      margin-left: 25px;
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-family: AirbnbCereal_W_Md, sans-serif;
+      font-weight: normal;
+      letter-spacing: 0.01rem;
+      font-weight: 100;
+      font-size: 14px;
+      margin: 0;
+      cursor: pointer;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .footer-lng {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      cursor: pointer;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        align-self: center;
+        font-size: 0.1rem;
+        margin: 0 5px;
+        padding-top: 2px;
+      }
+
+      a {
+        font-family: AirbnbCereal_W_Bk, sans-serif;
+        font-weight: normal;
+        letter-spacing: 0.01rem;  
+        padding: 0 5px;
+        color: inherit;
+        position: relative;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .app-footer {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (max-width: 745px) {
+  .margin-bottom{
+    margin-bottom: 65px;
+  }
+
+  .app-footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 10px;
+
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-content-bottom {
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      .app-footer-world-svg {
+        margin: 0;
+      }
+
+      .footer-lng {
+        margin: 0;
+      }
+    }
+  }
+}

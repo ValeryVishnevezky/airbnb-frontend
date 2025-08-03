@@ -1,0 +1,47 @@
+.mobile-order-form {
+  position: fixed;
+  height: 80px;
+  bottom: 0;
+  width: 100%;
+  background-color: $clr6;
+  border-top: 1px solid $gray1;
+  padding: 16px 24px;
+  z-index: 1000;
+
+  .mobile-order-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+    .mobile-order-price {
+      display: flex;
+      flex-direction: column;
+
+      .mobile-price-per-night {
+        font-size: rem(18px);
+        font-family: AirbnbCereal_W_Md;
+        color: $gray4;
+      }
+
+      .mobile-price-text {
+        font-size: rem(14px);
+        color: $gray4;
+      }
+
+      .mobile-dates {
+        font-family: AirbnbCereal_W_Md;
+        font-size: rem(14px);
+        color: $gray4;
+        text-decoration: underline;
+      }
+    }
+
+    .mobile-reserve-button {
+
+      @include reserve-btn;
+      width: 148px;
+      margin-inline-end: 15px;
+    }
+  }
+}

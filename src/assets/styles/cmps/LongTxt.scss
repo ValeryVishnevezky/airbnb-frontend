@@ -1,0 +1,24 @@
+.show-more-btn {
+    background-color: transparent;
+    border: none;
+    font-family: AirbnbCereal_W_Md, sans-serif;
+    text-decoration: underline;
+    padding: 0;
+    margin-top: 20px;
+
+    .btn-words {
+        display: flex;
+        font-size: 1rem;
+    }
+
+    img {
+        width: 15px;
+        height: 15px;
+        align-self: self-end;
+        margin-bottom: 2px;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}

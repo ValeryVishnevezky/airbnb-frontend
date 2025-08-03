@@ -1,0 +1,143 @@
+.app-header-mobile {
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  max-width: 700px;
+  padding: 40px 24px;
+  z-index: 15;
+  background-color: white;
+
+  .app-header-mobile-top {
+    position: fixed;
+    top: 0;
+    left: 25px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: white;
+    width: calc(100% - 50px);
+    max-width: 640px;
+    margin-top: 14px;
+    padding: 10px;
+    padding-bottom: 8px;
+    background-color: white;
+    border-radius: 32px;
+    border: 1px solid #ededed;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.773),
+      0px 2px 6px 0px rgba(0, 0, 0, 0.044), 0px 4px 8px 0px rgba(0, 0, 0, 0.051);
+    z-index: 16;
+    cursor: pointer;
+
+    .app-header-mobile-search-icon {
+      i {
+        font-size: 1.2rem;
+        padding: 0 10px;
+      }
+    }
+
+    .app-header-mobile-where {
+      margin-left: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+
+      h1 {
+        font-family: AirbnbCereal_W_Bk, sans-serif;
+        letter-spacing: 0.02rem;
+        font-weight: normal;
+        font-size: 0.875rem;
+        margin-bottom: 2px;
+      }
+
+      .app-header-mobile-anywhere {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        gap: 5px;
+
+        h3 {
+          font-family: AirbnbCereal_W_Lt, sans-serif;
+          font-weight: normal;
+          letter-spacing: 0.02rem;
+          font-size: 0.75rem;
+          margin: 0;
+          color: #6a6a6a;
+        }
+
+        i {
+          align-self: center;
+          font-size: 0.2rem;
+          color: #6a6a6a;
+        }
+      }
+    }
+  }
+
+  .app-header-mobile-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding-top: 13px;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid rgb(235, 235, 235);
+
+    .app-header-mobile-bottom-box {
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 550px;
+      min-width: 265px;
+
+      .app-header-mobile-options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        cursor: pointer;
+        background-color: white;
+        width: 100%;
+        min-width: 41px;
+        max-width: 112px;
+        padding: 0 5px;
+        color: #6a6a6a;
+
+        h4 {
+          font-family: AirbnbCereal_W_Lt, sans-serif;
+          letter-spacing: 0.05rem;
+          font-weight: normal;
+          font-size: 0.6rem;
+          margin-top: 4px;
+          color: #6a6a6a;
+        }
+        
+        img {
+          width: 23px;
+          height: 23px;
+          opacity: 0.6;
+        }
+      }
+
+      .active {
+        color: #e81c4a;
+        h4 {
+          font-weight: bold;
+          color: inherit;
+        }
+        img {
+          svg {
+            stroke-width: 5px;
+            stroke: inherit;
+          }
+        }
+      }
+    }
+  }
+}

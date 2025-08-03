@@ -1,0 +1,54 @@
+.stay-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(274px, 1fr));
+  gap: 23px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  position: relative;
+  padding: 0 80px;
+
+  li {
+    flex: 1;
+    display: grid;
+    grid-template-columns: auto;
+    color: black;
+
+    .actions {
+      justify-self: end;
+
+      button {
+        padding: 0.3em 0.5em;
+      }
+    }
+  }
+}
+
+@include for-extra-wide-layout {
+  .stay-list {
+    padding: 0 80px;
+  }
+}
+
+@include for-wide-layout {
+  .stay-list {
+    padding: 0 40px;
+  }
+}
+
+@include for-normal-layout {
+  .stay-list {
+    padding: 0 40px;
+  }
+}
+
+@include for-narrow-layout {
+  .stay-list {
+    padding: 0 40px;
+  }
+}
+
+@include for-mobile-layout {
+  .stay-list {
+    padding: 0 24px;
+  }
+}

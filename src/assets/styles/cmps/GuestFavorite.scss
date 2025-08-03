@@ -1,0 +1,100 @@
+.guest-favorite {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+
+  .guest-favorite-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .leaf-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      span {
+        font-weight: bold;
+        font-size: 1rem;
+        line-height: 1.2;
+        text-align: center;
+      }
+    }
+  }
+
+  .guest-favorite-text {
+    flex: 1;
+    font-family: AirbnbCereal_W_Bk;
+    font-size: 0.9rem;
+    font-weight: bold; 
+    color: black;
+  }
+
+  .guest-favorite-rating {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .rating-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+
+      .rating {
+        font-weight: bold;
+        font-size: 1.25rem;
+      }
+
+      .stars {
+        display: flex;
+        gap: 4px;
+
+        .star-icon {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+
+    .separator {
+      width: 1px;
+      height: 24px;
+      background-color: #ddd;
+    }
+
+    .review-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+
+      .review-number {
+        font-size: 1.17rem;
+        font-weight: bold;
+        color: black;
+      }
+
+      .review-text {
+        font-size: 0.875rem;
+        font-weight: bold;
+        text-decoration: underline;
+        color: black;
+      }
+    }
+  }
+}
+.modal-wrapper {
+  margin-top: 20px; 
+}

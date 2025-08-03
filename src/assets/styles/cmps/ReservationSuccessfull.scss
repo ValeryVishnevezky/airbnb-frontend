@@ -1,0 +1,153 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.reservation-success-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $clr6;
+    padding: 35px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px; 
+    width: 80%;
+    text-align: left;
+    font-family: Arial, sans-serif;
+
+    .swal2-title {
+        font-family: AirbnbCereal_W_Md, sans-serif;
+        font-weight: normal;
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem; 
+        margin-bottom: 8px;
+    }
+
+    .link {
+        color: #0071c2;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .reservation-details {
+        margin-top: 16px;
+
+        h3 {
+            font-size: 1rem; 
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .info-section {
+            margin-bottom: 8px;
+
+            .label {
+                font-weight: bold;
+                font-size: 0.85rem; 
+            }
+
+            .value {
+                font-size: 0.85rem;
+                color: #070707;
+                margin-top: 4px;
+            }
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 12px 0;
+        }
+    }
+
+    .price-details {
+        .info-section {
+            justify-content: space-between;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+    }
+
+    .total {
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .stay-image {
+        margin-top: 16px;
+        text-align: center;
+
+        img {
+            width: 500px; 
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            margin: 4px 0;
+            font-size: 0.85rem;
+            color: #0c0c0c;
+        }
+    }
+
+    .swal2-confirm {
+        background-color: #6c757d;
+        color: $clr6;
+        font-size: 0.9rem;
+        padding: 8px 16px; 
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        &:hover {
+            background-color: #5a6268;
+        }
+    }
+
+    .swal2-icon{
+        margin-top: 0;
+    }
+
+    button{
+        margin: 0;
+    }
+
+    @keyframes swal2-show {
+        0% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+        40% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        100% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    @keyframes swal2-hide {
+        0% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.8);
+        }
+    }
+    
+}

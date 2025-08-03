@@ -1,0 +1,315 @@
+.main {
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-reservations {
+  display: flex;
+  width: 100%;
+  width: 93vw;
+  max-width: 1120px;
+  padding: 0 80px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.no-orders {
+  text-align: center;
+}
+
+.dashboard-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  margin: 30px 0;
+  margin-bottom: 40px;
+
+  .link {
+    color: #222222;
+    text-decoration: none;
+  }
+
+  .link-r {
+    color: $logo-clr;
+    text-decoration: none;
+  }
+}
+
+table {
+  justify-self: center;
+  margin-top: 15px;
+  width: 100%;
+  border-collapse: collapse;
+  width: 93vw;
+  max-width: 1120px;
+  margin-bottom: 30px;
+  padding: 0 40px;
+}
+
+table th {
+  font-family: AirbnbCereal_W_Bk, sans-serif;
+  letter-spacing: 0.02rem;
+  font-weight: normal;
+  font-size: rem(12px);
+  background-color: transparent;
+  text-align: center;
+  border: none;
+  color: #636363;
+  padding: 10px 25px;
+  border-bottom: 1px solid #ddd;
+}
+
+table td {
+  height: 60px;
+  line-height: 1.5;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 25px;
+  text-align: left;
+  font-size: 16px;
+  font-family: AirbnbCereal_W_Lt, san serif;
+  font-weight: normal;
+}
+
+.user-fullname, .guests, .dates, .stay-name{
+  white-space: nowrap;
+}
+
+.user-fullname, .stay-name{
+  padding-right: 0;
+}
+
+.action-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  .approve-btn {
+    color: #4caf50;
+    background-color: #f0fff4;
+    border: 1px solid #4caf50;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #e8f5e9;
+    }
+
+    &:active {
+      background-color: #d9f0da;
+    }
+  }
+
+  .reject-btn {
+    color: #e53935;
+    background-color: #ffe5e5;
+    border: 1px solid #e53935;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #ffd6d6;
+    }
+
+    &:active {
+      background-color: #ffc7c7;
+    }
+  }
+}
+
+.charts-container {
+  width: 60%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-self: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.chart-card,
+.chart-card-pie {
+  justify-self: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  padding-top: 15px;
+  height: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.chart-card-3 {
+  justify-self: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  padding-top: 20px;
+  width: 100%;
+  // max-width: 450px;
+  height: 250px;
+  display: flex;
+  align-items: start;
+  gap: 40px;
+}
+
+.chart-card h3,
+.chart-card-3 h3,
+.chart-card-pie h3 {
+  font-size: 14;
+  font-family: AirbnbCereal_W_Bk, san serif;
+  font-weight: normal;
+  margin-bottom: 40px;
+  color: #333333;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  .legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  .legend-label {
+    font-size: 14px;
+    color: #333;
+  }
+}
+
+.chart {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pie-chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+}
+
+.tiny-pie-chart-container {
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 215px;
+  height: 215px;
+}
+
+.reservation-status {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  width: 100%;
+  min-width: 178px;
+
+  h3 {
+    font-size: 16px;
+    font-family: AirbnbCereal_W_Lt, san serif;
+    font-weight: normal;
+    white-space: nowrap;
+  }
+
+  span {
+    font-size: 16px;
+    font-family: AirbnbCereal_W_Lt, san serif;
+    font-weight: normal;
+    min-width: 30px;
+    white-space: nowrap;
+  }
+}
+
+.status-item span:last-child {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: auto;
+}
+
+.actionable-insights {
+  width: 100%;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    display: block;
+    left: -40px;
+    top: 0px;
+    bottom: -70px;
+    width: 1px;
+    background-color: #ddd;
+    margin: 0 25px;
+  }
+
+  h4 {
+    font-size: 14;
+    font-family: AirbnbCereal_W_Bk, san serif;
+    font-weight: normal;
+    margin-bottom: 40px;
+    color: #333333;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  p {
+    font-family: AirbnbCereal_W_Lt, san serif;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    color: #555555;
+    margin: 5px 0;
+  }
+}
+
+@include for-narrow-layout {
+  .charts-container {
+    flex-direction: column;
+  }
+}

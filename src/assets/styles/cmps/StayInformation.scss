@@ -1,0 +1,41 @@
+.stay-information {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 32px 0;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #ddd;
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-family: AirbnbCereal_W_Bk;
+
+
+        .info-icon {
+            width: 27px;
+            height: 27px;
+        }
+
+        .info-text {
+            display: flex;
+            flex-direction: column;
+
+            h6 {
+                font-size: 0.96rem;
+                letter-spacing: 0.01rem;
+                font-weight: 600;
+                color: #222;
+                margin: 0;
+            }
+
+            p {
+                font-size: 0.9rem;
+                font-weight: 400;
+                color: #717171;
+                margin: 4px 0 0;
+            }
+        }
+    }
+}

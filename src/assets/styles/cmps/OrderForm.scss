@@ -1,0 +1,189 @@
+.order-form {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 24px;
+  min-width: 219px;
+  max-width: 372px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: $clr6;
+  font-family: Arial, sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+
+  .order-price {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: baseline;
+
+    .price-amount {
+      font-weight: bold;
+      color: $clr7;
+    }
+
+    span:last-child {
+      font-size: 1rem;
+      color: $clr7;
+      margin-left: 4px;
+      font-family: AirbnbCereal_W_Lt;
+      font-weight: normal;
+    }
+  }
+
+  .order-table {
+    // padding: 11px;
+    // padding-top: 9px;
+    // padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    
+    .order-dates {
+      display: flex;
+      gap: 2px;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+      
+      .date-input {
+        padding-inline-end: 10px;
+        padding: 10px 13px;
+        padding-top: 9px;
+        padding-bottom: 15px;  
+        overflow: visible;
+        flex: 1;
+        border-right: 1px solid #ddd;
+        line-height: 0.6;
+        cursor: pointer;
+        
+        &:last-child {
+          padding-inline-start: 10px;
+          border-right: none;
+        }
+        
+        label {
+          font-size: 0.6rem;
+          font-weight: bold;
+          color: $clr7;
+          text-transform: uppercase;
+          border-bottom: 10px;
+        }
+        
+        .input {
+          border: none;
+          font-size: rem(14px);
+          outline: none;
+          width: 100%;
+          padding-top: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+    
+    .bold-border{
+      border: 2px solid #363636;
+      padding: 12px 9px;
+      padding-top: 1px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      label {
+        font-size: 0.6rem;
+        font-weight: bold;
+        color: $clr7;
+        text-transform: uppercase;
+      }
+
+      .guest-input {
+        font-size: 0.9rem;
+        margin-top: 1px;
+        margin-left: -2px;
+      }
+    }
+    
+    .order-guests {
+      padding: 14px 11px;
+      padding-top: 3px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .stay-details-guest-svg{
+        width: 16px;
+        height: 16px;
+        margin-top: 5px;
+        margin-right: 7px;
+      }
+
+      label {
+        font-size: 0.6rem;
+        font-weight: bold;
+        color: $clr7;
+        text-transform: uppercase;
+      }
+
+      .guest-input {
+        font-size: 0.9rem;
+        margin-top: 1px;
+        margin-left: -2px;
+      }
+    }
+  }
+
+  .reserve-button {
+    @include reserve-btn;
+  }
+
+  .no-charge-text {
+    font-size: rem(14.5px);
+    color: $clr7;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 24px;
+  }
+
+  .order-summary {
+    font-size: 1rem;
+    color: #333;
+
+    .price-calculation {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      color: $clr7;
+
+      .underline-text {
+        text-decoration: underline;
+      }
+
+      span:last-child {
+        font-weight: normal;
+      }
+    }
+
+    .total-divider {
+      border-top: 1px solid #ddd;
+      margin-bottom: 25px;
+    }
+
+    .total-price {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 1rem;
+      letter-spacing: 0.03rem;
+      color: #444;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+*{
+  box-sizing: border-box;
+}
+
+.stay-edit {
+  justify-self: center;
+  font-family: AirbnbCereal_W_Lt, sans-serif;
+  font-size: rem(16px);
+  width: 80%;
+
+  input {
+    border: none;
+    border-bottom: 1px solid $gray1;
+    color: $icons-clr;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .bottom-info {
+
+    margin-bottom: 20px;
+
+    .price {
+      margin-inline-start: 20px;
+    }
+
+    span {
+      font-family: AirbnbCereal_W_Lt, sans-serif;
+      color: $icons-clr;
+
+      input {
+        margin: 0 rem(7px);
+        width: 50px;
+        color: $icons-clr;
+      }
+    }
+  }
+
+  .location {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5vw;
+    margin-bottom: 30px;
+  }
+
+  .description {
+
+    h4 {
+      color: $icons-clr;
+      font-size: rem(20px);
+    }
+
+    textarea {
+      width: 60vw;
+      height: 15vh;
+      border: 1px solid $gray2;
+      border-radius: rem(5px);
+      resize: none;
+      font-family: AirbnbCereal_W_Lt;
+      margin-bottom: 10px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .stay-name {
+    margin: 30px 0px;
+
+    input {
+      font-size: rem(25px);
+      width: 90vw;
+
+      &:focus {
+        border: none;
+      }
+    }
+  }
+
+  .images {
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .img {
+      object-fit: cover;
+      overflow: hidden;
+      aspect-ratio: 1.1 / 1;
+      width: 100%;
+      height: 100%;
+
+      img {
+        object-fit: cover;
+        overflow: hidden;
+        aspect-ratio: 1.1 / 1;
+        width: 100%;
+        height: 100%;
+      }
+
+      div {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-color: #fe385c20;
+        align-items: center;
+        justify-content: center;
+        font-family: AirbnbCereal_W_Md;
+        font-size: rem(15px);
+        color: $icons-clr;
+      }
+    }
+
+    .img0 {
+      grid-row: 1 / -1;
+      grid-column: 1 / span 2;
+    }
+  }
+
+  .save-btn {
+    @include reserve-btn;
+    width: 100px;
+    padding: 8px;
+  }
+}

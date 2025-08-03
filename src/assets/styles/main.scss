@@ -1,0 +1,61 @@
+// Setup
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+@import "setup/typography";
+
+// Basics
+@import "basics/helpers";
+@import "basics/layout";
+@import "basics/base";
+// @import "basics/links";
+@import "basics/forms";
+
+
+// pages
+@import "../styles/App.scss";
+
+@import "pages/AboutUs";
+@import "pages/StayIndex.scss";
+@import "pages/ReviewIndex";
+@import "pages/UserDetails";
+@import "pages/TaskDetails";
+@import "pages/StayDetails";
+@import "pages/LoginSignup";
+@import "pages/DashboardReservation";
+@import "pages/DashboardListings";
+@import "pages/StayEdit.scss";
+@import "pages/Trips.scss";
+
+// Components
+@import "cmps/list";
+@import "cmps/preview";
+
+@import "cmps/AppHeader";
+@import "cmps/AppHeaderMobile.scss";
+@import "cmps/AppFooter";
+@import "cmps/UserMsg";
+
+@import "cmps/StayFilterFocused.scss";
+@import "cmps/StayFilterUnfocused.scss";
+@import "cmps/StayFilterMobile.scss";
+@import "cmps/ReviewEdit";
+@import "cmps/ReviewList";
+@import "cmps/ReviewPreview";
+@import "cmps/StayList";
+@import "cmps/StayPreview";
+@import "cmps/OrderForm";
+@import "cmps/MobileOrderForm";
+@import "cmps/ImageCarousel.scss";
+@import "cmps/ReservationDetails.scss";
+@import "cmps/ReservationSuccessfull.scss";
+@import "cmps/DateModal.scss";
+@import "cmps/GuestModal.scss";
+@import "cmps/PlaceModal.scss";
+@import "cmps/stayFilterCategories.scss";
+@import "cmps/MobileGallery.scss";
+@import "cmps/LongTxt.scss";
+@import "cmps/MobileHeader.scss";
+@import "cmps/TripDetails.scss";
+@import "cmps/StayInformation.scss";
+@import "cmps/GuestFavorite.scss";

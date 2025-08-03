@@ -1,0 +1,181 @@
+.reservation-details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999 !important;
+  font-family: Arial, sans-serif;
+  pointer-events: auto;
+  
+  .details-container{
+    background-color: white;
+    border-radius: 12px;
+    max-width: 800px;
+    padding: 40px 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .details-wrapper {
+    margin-bottom: 30px;
+    display: flex;
+    position: relative;
+    padding: 10px;
+    gap: 40px;
+    animation: fadeIn 0.3s ease;
+
+    .reservation-text {
+      flex: 1;
+
+      h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+      }
+
+      .reservation-info {
+        margin-top: 20px;
+
+        h3 {
+          font-weight: bold;
+          margin-bottom: 15px;
+          font-size: 23px;
+        }
+
+        .info-item {
+          display: flex;
+          justify-content: space-between;
+          margin: 10px 0;
+          font-size: 16px;
+
+          .guests{
+            margin-left: 5px;
+          }
+
+          .label {
+            font-weight: bold;
+            color: #333;
+            
+          }
+          .service-label{
+            padding-bottom: 15px;
+          }
+
+          .value {
+            font-weight: normal;
+            color: #555;
+          }
+
+          &.total {
+            margin-top: 15px;
+            border-top: 1px solid $gray1;
+            padding-top: 21px;
+            font-size: 18px;
+          }
+        }
+
+        .price-details {
+          border-top: 1px solid #ddd;
+          margin-top: 20px;
+          padding-top: 15px;
+
+          .info-item {
+            margin: 8px 0;
+          }
+        }
+      }
+    }
+
+    .reservation-image {
+      border-radius: 12px;
+      padding: 15px;
+      padding-top: 0;
+      height: fit-content;
+      text-align: center;
+      width: 250px;
+      // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      
+      
+      img {
+        width: 100%;
+        height: auto;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+
+      .stay-name {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .stay-location {
+        font-size: 14px;
+        color: #777;
+      }
+    }
+  }
+
+  .buttons-container {
+    display: flex;
+    gap: 3%;
+    top: 400px;
+    left: 270px;
+    justify-content: center;
+  
+    .back-button,
+    .confirm-button {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      letter-spacing: 1.1px;
+      cursor: pointer;
+      transition: background-color 0.4s ease;
+      max-width: 150px;
+      font-size: rem(16.5px);
+    }
+
+    .back-button {
+      background-color: #e0e0e0;
+      color: #333;
+
+      &:hover {
+        background-color: #ccc;
+      }
+    }
+
+    .confirm-button {
+      background-color: #ff385c;
+      color: white;
+
+      &:hover {
+        background-color: #e1234b;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

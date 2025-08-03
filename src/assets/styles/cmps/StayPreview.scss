@@ -1,0 +1,63 @@
+.stay-preview {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+
+    font-family: AirbnbCereal_W_Bk, sans-serif;
+    font-size: rem(15px);
+    letter-spacing: 0.03rem;
+    line-height: 1.4;
+    color: $clr7;
+    margin-bottom: 20px;
+
+    .stay-loc {
+        grid-column: 1;
+        font-weight: bold;
+        overflow: hidden;
+    }
+
+    .stay-distance {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        color: $user-icon-clr;
+        line-height: 1.6;
+    }
+
+    .stay-dates {
+        grid-column: 1;
+        color: $user-icon-clr;
+    }
+
+    .stay-price {
+        grid-column: 1;
+        margin-top: 7PX;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    .stay-rating-container {
+        grid-column: 2;
+        grid-row: 1;
+        letter-spacing: -0.3px;
+
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        justify-self: end;
+        font-size: rem(14.5px);
+
+        .star {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .ratings-amount{
+        margin-left: -3px;
+    }
+}
