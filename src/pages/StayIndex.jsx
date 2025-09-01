@@ -13,13 +13,9 @@ export default function StayIndex() {
   const stays = useSelector(state => state.stayModule.stays)
   const filterBy = useSelector(state => state.stayModule.filterBy)
   const loaderRef = useRef(null)
-  const isLoadingRef = useRef(false)
-
-  console.log(stays.length);
-  
+  const isLoadingRef = useRef(false)  
 
   useEffect(() => {
-    // dispatch(setFilterBy({ ...filterBy, page: 0 }))
     loadStays({ ...filterBy, page: 0 })
   }, [filterBy.place, filterBy.minCapacity, filterBy.availableDates, filterBy.label])
 

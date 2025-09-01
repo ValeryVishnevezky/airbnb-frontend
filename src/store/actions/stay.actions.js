@@ -24,7 +24,6 @@ export async function loadStays() {
 		} else {
 			store.dispatch(getCmdAddStays(stays))
 		}
-		// store.dispatch(getCmdSetStays(stays))
 	} catch (err) {
 		console.log('Cannot load stays', err)
 		throw err
