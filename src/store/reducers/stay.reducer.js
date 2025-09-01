@@ -1,4 +1,4 @@
-import { stayService } from "../../services/stay/stay.service.js"
+import { stayService } from '../../services/stay/stay.service.js'
 export const SET_STAYS = 'SET_STAYS'
 export const SET_STAY = 'SET_STAY'
 export const REMOVE_STAY = 'REMOVE_STAY'
@@ -7,47 +7,51 @@ export const UPDATE_STAY = 'UPDATE_STAY'
 export const ADD_STAY_MSG = 'ADD_STAY_MSG'
 export const SET_FILTER_BY = 'SET_FILTER_BY'
 export const SET_LIKED_STAYS = 'SET_LIKED_STAYS'
+export const ADD_STAYS = 'ADD_STAYS'
 
 const initialState = {
-    stays: [],
-    stay: null,
-    LikedStays: JSON.parse(localStorage.getItem('likedStays')) || [],
-    filterBy: stayService.getDefaultFilter()
+	stays: [],
+	stay: null,
+	LikedStays: JSON.parse(localStorage.getItem('likedStays')) || [],
+	filterBy: stayService.getDefaultFilter()
 }
 
 export function stayReducer(state = initialState, action) {
-    var newState = state
-    var stays
-    switch (action.type) {
-        case SET_STAYS:
-            return { ...state, stays: action.stays }
-        case SET_STAY:
-            newState = { ...state, stay: action.stay }
-            break
-        case REMOVE_STAY:
-            const lastRemovedStay = state.stays.find(stay => stay._id === action.stayId)
-            stays = state.stays.filter(stay => stay._id !== action.stayId)
-            newState = { ...state, stays, lastRemovedStay }
-            break
-        case ADD_STAY:
-            newState = { ...state, stays: [...state.stays, action.stay] }
-            break
-        case UPDATE_STAY:
-            stays = state.stays.map(stay => (stay._id === action.stay._id) ? action.stay : stay)
-            newState = { ...state, stays }
-            break
-        case ADD_STAY_MSG:
-            newState = { ...state, stay: { ...state.stay, msgs: [...state.stay.msgs || [], action.msg] } }
-            break
-        case SET_LIKED_STAYS:
-            newState = { ...state, LikedStays: action.LikedStays }
-            break
-        case SET_FILTER_BY:
-            const filterBy = { ...state.filterBy, ...action.filterBy }
-            return { ...state, filterBy }
-        default:
-    }
-    return newState
+	var newState = state
+	var stays
+	switch (action.type) {
+		case SET_STAYS:
+			return { ...state, stays: action.stays }
+		case ADD_STAYS:
+			const newStays = action.stays.filter(newStay => !state.stays.some(stay => stay._id === newStay._id))
+			return { ...state, stays: [...state.stays, ...newStays] }
+		case SET_STAY:
+			newState = { ...state, stay: action.stay }
+			break
+		case REMOVE_STAY:
+			const lastRemovedStay = state.stays.find(stay => stay._id === action.stayId)
+			stays = state.stays.filter(stay => stay._id !== action.stayId)
+			newState = { ...state, stays, lastRemovedStay }
+			break
+		case ADD_STAY:
+			newState = { ...state, stays: [...state.stays, action.stay] }
+			break
+		case UPDATE_STAY:
+			stays = state.stays.map(stay => (stay._id === action.stay._id ? action.stay : stay))
+			newState = { ...state, stays }
+			break
+		case ADD_STAY_MSG:
+			newState = { ...state, stay: { ...state.stay, msgs: [...(state.stay.msgs || []), action.msg] } }
+			break
+		case SET_LIKED_STAYS:
+			newState = { ...state, LikedStays: action.LikedStays }
+			break
+		case SET_FILTER_BY:
+			const filterBy = { ...state.filterBy, ...action.filterBy }
+			return { ...state, filterBy }
+		default:
+	}
+	return newState
 }
 
 // unitTestReducer()
@@ -76,4 +80,3 @@ export function stayReducer(state = initialState, action) {
 //     state = stayReducer(state, { type: REMOVE_STAY, stayId: stay1._id })
 //     console.log('After REMOVE_STAY:', state)
 // }
-
