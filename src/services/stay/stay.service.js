@@ -43,7 +43,7 @@ function getDefaultFilter() {
 		},
 		label: [],
 		page: 0,
-		limit: 40
+		limit: 10
 	}
 }
 
